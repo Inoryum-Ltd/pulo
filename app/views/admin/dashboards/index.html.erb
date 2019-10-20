@@ -1,0 +1,23 @@
+<h2>Dashboard</h2>
+<div class="dash-top">
+ <% if current_user.admin? %>
+ <a href="<%= admin_articles_url %>">Total Articles <span><%= pluralize(@db_articles.count, '') %></span></a>
+ <% else %>
+<a href="<%= admin_articles_url %>">Total Articles <span><%= pluralize(@user_articles.count, '') %></span></a>
+<% end %>
+<a href="<%= admin_categories_url %>">Total Categories <span><%= pluralize(@categories.count, '') %></span></a>
+<a href="<%= admin_pages_url %>">Total Pages <span><%= pluralize(@pages.count, '') %></span></a>
+<a href="<%= admin_projects_url %>">Total Projects <span><%= pluralize(@projects.count, '') %></span></a>
+</div>
+<div class="dash-middle row">
+ 
+ <div class="col">
+  
+ </div>
+ <div class="col">
+  <h2>Resent Users</h2>
+  <% @users.limit(5).each do |u| %>
+   <%= u.username %>
+  <% end %>
+ </div>
+</div>

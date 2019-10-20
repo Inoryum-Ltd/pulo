@@ -1,0 +1,20 @@
+<div class="single-header">
+	<div class="ov"></div>
+	<h2><%= @project.title %></h2>
+</div>
+<div class="container artcle-wrapper">
+	<div class="row">
+		<div class="col-md-6 text-center">
+			<% if @project.project_image.attached? %>
+				<%= image_tag (@project.project_image), lazy: true, class: "img-fluid" %>
+			<% end %>
+		</div>
+		<div class="col-md-6">
+			<%= @project.description %>
+			<p class="lead mt-4 mb-4">Project Type: <em><%= @project.project_type.name %></em></p>
+			<%= link_to 'View Site', @project.project_link, target: "_blank", class: "btn btn-primary" %>
+		</div>
+		
+	</div>
+	
+</div>

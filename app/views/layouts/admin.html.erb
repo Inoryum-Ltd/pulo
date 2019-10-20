@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= setting.site_title %> - Administration</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+ <body role="document" class="<%= controller.controller_name %> <%= controller.action_name %>" data-controller="<%= controller.controller_path %>" data-action="<%= controller.action_name %>" style="overflow: hidden;">
+    <div class="wrapper">
+    <%= render 'layouts/admin/sidenav' %>
+      <div id="content">
+      <%= render 'layouts/admin/nav' %>
+        <div class="content-inner">
+          <%= render 'layouts/messages' %>
+          <div class="container">
+             <%= yield %>
+         </div>
+        </div>
+     <%= javascript_pack_tag 'application' %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <% if setting.site_logo.attached? %>
+      <%= link_to (image_tag setting.site_logo.variant(resize_to_limit: [200, 200])), root_path, class: "navbar-brand" %>
+    <% else %>
+       <%= link_to setting.site_title, root_path, class: "navbar-brand" %>
+    <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mr-auto">
+        	<% page_menu.each do |pn| %>
+        	<li class="nav-item">
+            <%= link_to pn.title, page_path(pn), class: "nav-link" %>
+          </li>
+        	
+        	<% end %>
+          <li class="nav-item">
+            <%= link_to 'Blog', articles_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Projects', projects_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Contact', contact_path, class: "nav-link" %>
+          </li>
+        </ul>
+        
+        
+        <ul class="navbar-nav navbar-right">
+          <% if user_signed_in? and current_user %>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <% if current_user.admin? %>
+                  <%= current_user.username %>(Admin)
+                    <% else %>
+                      <%= current_user.username %>
+                        <% end %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%# link_to 'Create Articles', new_article_path, class: "dropdown-item" %>
+                  <% if current_user.admin? %>
+                    <%# link_to 'Create Categories', new_category_path, class: "dropdown-item" %>
+                      <% end %>
+                        <%= link_to 'Edit profile', edit_user_registration_path(current_user), class: "dropdown-item" %>
+                        <%= link_to 'View profile', user_path(current_user), class: "dropdown-item" %>
+                        <%= link_to 'Dashboard', admin_root_path, class: "dropdown-item" %>
+                        <div class="dropdown-divider"></div>
+                        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </li>
+            <% else %>
+              <%= link_to 'Login', new_user_session_path, class: "nav-link" %>
+              <%= link_to 'Sign up', new_user_registration_path, class: "nav-link" %>
+
+                  <% end %>
+
+        </ul>
+      </div>
+  </div>
+</nav>

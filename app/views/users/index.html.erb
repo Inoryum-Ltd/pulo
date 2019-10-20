@@ -1,0 +1,49 @@
+<div class="container">
+  
+
+<h2>
+  Contributors 
+</h2>
+<div class="grid-wrapper">
+  <% @users.each do |user| %>
+  <div class="user gird-items">
+      <h2 class="article-title">
+        <%= link_to user.username,  user_path(user) %> <br /> <small> <%= pluralize(user.articles.count, "article") if user.articles %> </small>
+      </h2> 
+       <div class="profile-image">
+       
+          <%= link_to gravatar_for(user, size: 120),  user_path(user) %>
+      </div>
+       <% unless user.bio.nil? %>
+        <div class="bio">
+          <%= truncate(user.bio, length: 100) %>
+        </div>
+        <% end %>
+    
+ <div class="social">
+          <% unless user.facebook.nil? %>
+            <a href=" <%= user.facebook %>"><i class="fa fa-facebook"></i></a>
+           <% end %>
+
+          <% unless user.twitter.nil? %>
+          <a href=" <%= user.twitter %>"><i class="fa fa-twitter"></i></a>
+          <% end %>
+      </div>
+      
+        
+       <div class="article-action-btn text-center mt-5">
+          <%= link_to 'View', user_path(user), class: "btn btn-primary btn-sm" %>
+          <% if user_signed_in? %>
+          <%= link_to 'Edit', edit_user_registration_path(user), class: "btn btn-primary btn-sm" %> 
+          <% end %>
+          <%= link_to 'Delete', user_path(user), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %> 
+        </div>
+    
+ 
+</div>
+
+    
+  <% end %>
+ </div>
+  
+  </div>

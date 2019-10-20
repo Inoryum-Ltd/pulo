@@ -1,0 +1,12 @@
+<% @page_blocks_footer.each do |pb| %>
+<div class="page-footer-item">
+    <div class="block <%= pb.block_class if pb.block_class %>">
+    	<% if pb.show_title? %>
+    	<h3 class="block-title"><%= pb.title %></h3>
+    	<% end %>
+    	<div class="block-body">
+    	    <%= raw pb.body %>
+    	</div>
+    </div>
+</div>
+<% end %>

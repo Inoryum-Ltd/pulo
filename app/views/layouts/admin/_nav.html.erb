@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	<div class="container-fluid">
+		<button type="button" id="sidebarCollapse" class="btn btn-info">
+    	<i class="fa fa-bars"></i>
+    </button>
+    <ul class="navbar-nav navbar-right">
+      <% if user_signed_in? and current_user %>
+      <li class="nav-item dropdown">
+       	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <% if current_user.admin? %>
+          <%= current_user.username %>(Admin)!
+          <% else %>
+          <%= current_user.username %>!
+          <% end %>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Edit profile', edit_user_registration_path(current_user), class: "dropdown-item" %>
+            <%= link_to 'View profile', user_path(current_user), class: "dropdown-item" %>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+         </div>
+        </li>
+		<% end %>
+    </ul>
+   </div>
+</nav>

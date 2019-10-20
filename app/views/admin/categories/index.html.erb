@@ -1,0 +1,37 @@
+<div class="admin-content-header">
+  <div class="admin-content-header-title">
+  <h2>
+  Categories
+</h2>
+</div>
+<div class="admin-content-header-action">
+  <%= link_to 'New Category',  new_admin_category_path, class: "btn btn-outline-info" %>
+</div>
+</div>
+
+<ul class="items-listing">
+  <li class="item-listing-inner table-title">
+      <div class="listing-items date"><b>Date</b></div>
+      <div class="listing-items title"><b>Title</b></div>
+      <div class="listing-items page-assignment"><b></b></div>
+      <div class="listing-items action">
+        <b>Action</b>
+      </div>
+    </li>
+  <% @admin_categories.each do |category| %>
+    <li class="item-listing-inner">
+      <div class="listing-items date"><%= category.created_at.strftime("%b %d, %Y") %></div>
+      <div class="listing-items title"><b><%= category.name %></b></div>
+      <div class="listing-items page-assignment">  </div>
+      <div class="listing-items action">
+        <%= link_to '', category_path(category), class: "fa fa-globe"  %>
+        <%= link_to '', edit_admin_category_path(category), class: "fa fa-edit" %>
+        <%= link_to '', admin_category_url(category), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash" %>
+      </div>
+    </li>
+  <% end %>
+  
+</ul>
+
+
+

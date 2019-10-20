@@ -1,0 +1,73 @@
+
+  
+  <% if @category.cover_image_cat.attached? %>
+ <section class="single-header" style="background-image:url('<%= url_for(@category.cover_image_cat) %>');">
+   <div class="ov"></div>
+  <div class="overlay">
+    <h2>
+      <%= @category.name %><small> <em><%= @category.description %></em></small>
+    </h2>
+  </div>
+</section>
+
+<% else %>
+
+ <section class="category_header" style="">
+  <div class="overlay">
+    <div class="container">
+      <h2 class="center">
+        <%= @category.name %>
+      </h2>
+      <div class="wel">
+        <%= @category.description %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% end %>
+
+  <div class="container artcle-wrapper">
+    <div class="category-wrapper">
+       <div class="row">
+        
+          <div class="col-md-8">
+             <%= render 'articles/article', obj: @category_articles %>
+          </div>
+          <div class="col-md-4">
+            <div class="recent ars">
+            <h2>Trending</h2>
+          <% recent_articles.each do |article| %>
+            <div class="recen-items">
+                    <div class="recent-content" style="background-image: url('<%= url_for(article.featured_image) if article.featured_image.attached? %>')">
+                      <div class="ov"></div>
+                      
+                        <%= link_to article.title,  article_path(article), class: "recent-titile" %>
+                      
+                     
+                      <div class="meta-r">
+                        <i class="fa fa-calendar"></i> <%= article.created_at.to_date %>
+                      </div> 
+                    </div>
+            </div>
+            <% end %>
+        </div>
+        
+        <div class="Catrgories-sp">
+          <h2>Categories</h2>
+          <% Category.all.each do |category| %>
+                    <%= link_to "#{category.name}", category_path(category) %>
+                  <% end %>
+        </div>
+          </div>
+        
+       </div>
+    </div>
+  </div>
+  
+
+  
+ 
+<div align="center">
+  <%= will_paginate @category_articles %>
+</div>

@@ -1,0 +1,31 @@
+<div class="admin-content-header">
+  <div class="admin-content-header-title">
+  <h2>
+  Articles
+</h2>
+</div>
+<div class="admin-content-header-action">
+  <%= link_to 'New Article',  new_admin_article_path, class: "btn btn-outline-info" %>
+</div>
+</div>
+
+
+<ul class="items-listing">
+  <li class="item-listing-inner table-title">
+      <div class="listing-items date"><b>Date</b></div>
+      <div class="listing-items title"><b>Title</b></div>
+      <div class="listing-items article_catogory"><b>Categories</b></div>
+      <div class="listing-items teatured_article_index"><b>Featured?</b></div>
+      <div class="listing-items action">
+        <b>Action</b>
+      </div>
+    </li>
+      <% if current_user.admin? %>
+        <%= render 'article', obj: @articles %>
+      <% else %>
+        <%= render 'article', obj: @User_articles %>
+      <% end %>
+  
+</ul>
+
+

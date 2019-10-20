@@ -1,0 +1,23 @@
+<div class="single-header">
+	<div class="ov"></div>
+<h2>Projects Completed</h2>
+</div>
+
+<div class="container project-zindex">
+		<div class="buttons-center">
+      <button class="btn btn-default filter-button" data-filter="all">All Projects</button>
+      <% @project_types.each do |ft| %>
+      <button class="btn btn-default filter-button" data-filter="<%= ft.id %>"><%= ft.name %></button>
+      <% end %>
+      </div>
+      <div class="project-wrapper">
+    	<% @projects.each do |p| %>
+      	 <a href="<%= project_path(p) %>" class="project-items gallery_product filter <%= p.project_type_id %>">
+                 <%= image_tag (p.project_image.variant(resize: "550x550")), lazy: true, class: "img-fluid" if p.project_image.attached? %>
+            </a>
+<% end %>
+ 
+      </div>
+     
+    
+ </div>

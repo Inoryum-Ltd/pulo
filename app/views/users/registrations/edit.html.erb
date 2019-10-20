@@ -1,0 +1,74 @@
+
+
+<div class="container">
+  <h2>Edit Profile</h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+ <div class="form-group">
+      <%= f.label :username %> 
+      <%= f.text_field :username, class: "form-control", autofoucs: true %>
+  </div>
+ <%= f.check_box :admin, class: "form-control", autofoucs: true %>
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, class: "form-control", autocomplete: "current-password" %>
+  </div>
+  <div class="form-group">
+        <%= f.label :bio %>
+        <%= f.text_area :bio, rows: 5, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+              <%= f.url_field :facebook, class: "form-control", placeholder: "Enter your Facebook URL" %>
+            </div>
+            <div class="col">
+              <%= f.url_field :twitter, class: "form-control", placeholder: "Enter your Twitter URL" %>
+            </div>
+          </div>
+      </div>
+<div class="form-group">
+    <%= f.label :authorc %><br>
+    <%= f.file_field :authorc, direct_upload: true, class: "form-control-file" %>
+  </div>
+  <% if resource.authorc.attached? %>
+    <figure class="attachment">
+      <%= image_tag resource.authorc.variant(resize_to_limit: [250, 250]) %>
+    </figure>
+    <% end %>
+  <div class="actions">
+    <%= f.submit "Update", class: "btn btn-success" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
+</div>

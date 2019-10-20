@@ -1,0 +1,40 @@
+
+<div class="grid-wrapper">
+  <% obj.each do |article| %>
+
+  <div class="gird-items reveal">
+    <div class="article-grid">
+      <div class="featured-image-outer">
+      <% if article.featured_image.attached? %>
+          <figure class="featured-image" style="background-image: url('<%= url_for(article.featured_image) %>');">
+          </figure>
+         <% end %>
+         </div>
+      <h2 class="article-title">
+        <%= link_to article.title,  article_path(article) %>
+      </h2> 
+       <div class="limit_text">
+        <%# article.description %>
+        </div>
+
+        <div class="article-meta">
+          <small>
+          <i class="fa fa-user"></i> <%= link_to article.user.username, article.user if article.user %>,
+          <i class="fa fa-calendar"></i> <%= article.created_at.to_date %>
+            <% if user_signed_in? && current_user == article.user %>
+          Last Updated: <%= time_ago_in_words(article.updated_at) %> ago
+            <% end %>
+            </small>
+
+
+        </div>
+      
+   </div>
+    
+ 
+</div>
+
+    
+  <% end %>
+ </div>
+

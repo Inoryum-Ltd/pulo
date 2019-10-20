@@ -1,0 +1,45 @@
+<div class="single-header">
+  <div class="ov"></div>
+  <h2>
+  Get in Touch!
+</h2>
+</div>
+
+
+ <div class="contact-wrapper">
+
+<%= render 'shared/errors', obj: @contact %>
+  
+  
+   <%= form_for @contact, :html => {class: "contact",} do |f| %>
+
+    <div class="form-group">
+       <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control", autofoucs: true, placeholder: "Enter Your Name" %>
+  </div>
+  <div class="form-group">
+       <%= f.label :phone_number %>
+      <%= f.text_field :phone_number, class: "form-control", autofoucs: true, placeholder: "Enter Your Phone Number" %>
+  </div>
+  <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control", placeholder: "Enter Your Email" %>
+    </div>
+
+    <div class="form-group">
+     
+     <%= f.label :Message %>
+      <%= f.text_area :body, rows: 10, class: "form-control", id: "counted", placeholder: "Please Write down your queiry Here" %>
+      
+      <p>Current character count: <span id="char-count">0</span> / 10,000</p>
+  </div>
+
+  <p>
+    <%= f.submit "Send Message", class: "btn btn-success"%>
+  </p>
+
+<% end %>
+  
+  </div>
+  
+  

@@ -1,0 +1,47 @@
+<% if setting.display_hero? %>
+
+<section class="main-hero">
+  <div class="single-header-container container">
+    <div class="row">
+    <div class="hero-text col-md-6">
+      <h1><%= setting.hero_title %></h1>
+      <div class="hero-content"><small><em><%= setting.hero_content %></em></small></div>
+
+<a href="<%= setting.hero_button_link %>" class="btn btn-primary"><%= setting.hero_button_text %></a>
+      
+    </div>
+    
+    <div class="hero-image col-md-6">
+      <%= image_tag setting.hero_image if setting.hero_image.attached? %>
+      
+    </div>
+    </div>
+  
+  </div>
+</section>
+
+<% end %>
+
+<section class="section services">
+  <h2 class="section-title">Services we Offer</h2>
+  <div class="container">
+   <div class="row">
+     <div class="col-md-3">
+       <h2>Web Development</h2>
+     </div>
+     <div class="col-md-3">
+       <h2>Web Development</h2>
+     </div>
+     <div class="col-md-3">
+       <h2>Web Development</h2>
+       
+     </div>
+     <div class="col-md-3">
+       <h2>Web Development</h2>
+       
+     </div>
+     
+   </div>
+    
+  </div>
+</section>

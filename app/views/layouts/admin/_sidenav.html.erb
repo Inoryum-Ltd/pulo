@@ -1,0 +1,30 @@
+<!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3><%= link_to setting.site_title, root_path %></h3>
+        </div>
+
+        <ul class="list-unstyled components">
+           <li><a href="<%= admin_root_path %>"><i class="fa fa-area-chart" aria-hidden="true"></i> <span>Dashboard</span></a></li>
+           <% if current_user.admin? %>
+               <li><a href="<%= admin_pages_path %>"><i class="fa fa-file-text-o" aria-hidden="true"></i> <span>Pages</span></a></li>
+           <% end %>
+           <li><a href="<%= admin_blocks_path %>"><i class="fa fa-th" aria-hidden="true"></i> <span>Blocks</span></a></li>
+           <li><a href="<%= admin_articles_path %>"><i class="fa fa-newspaper-o" aria-hidden="true"></i> <span>Articles</span></a></li>
+           <li><a href="<%= admin_categories_path %>"><i class="fa fa-object-group" aria-hidden="true"></i> <span>Categories</span></a></li>
+           <li class="">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-tasks" aria-hidden="true"></i> <span>Works</span></a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li><a href="<%= admin_projects_path %>"><i class="fa fa-bars" aria-hidden="true"></i> <span>Projects</span></a></li>
+                    <li><a href="<%= admin_project_types_path %>"><i class="fa fa-bars" aria-hidden="true"></i> <span>Project Type</span></a></li>
+                </ul>
+            </li>
+           <li><a href="<%= admin_settings_path %>"><i class="fa fa-cogs" aria-hidden="true"></i> <span>Site Setting</span></a></li>
+            <li><a href="<%= contact_path %>"><i class="fa fa-envelope-open-o" aria-hidden="true"></i><span>Contact</span></a></li>
+        </ul>
+    <div class="credits">
+        Powered by <a href="https://thesaleheen.com">sblox <span>by theSaleheen</span></a>
+        
+    </div>
+    </nav>
+    <!-- Page Content -->

@@ -1,0 +1,50 @@
+
+  
+  <% if @category.cover_image_cat.attached? %>
+ <section class="single-header" style="background-image:url('<%= url_for(@category.cover_image_cat) %>');">
+   <div class="ov"></div>
+  <div class="overlay">
+    <h2>
+      <%= @category.name %>
+    </h2>
+    <div class="wel">
+      <%= @category.description %>
+    </div>
+  </div>
+</section>
+
+<% else %>
+
+ <section class="category_header" style="">
+  <div class="overlay">
+    <div class="container">
+      <h2 class="center">
+        <%= @category.name %>
+      </h2>
+      <div class="wel">
+        <%= @category.description %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% end %>
+
+  <div class="container">
+<div class="row">
+
+    
+  
+  <div class="col-md-8">
+     <%= render 'articles/article', obj: @category_articles %>
+  </div>
+  <div class="col-md-4">
+    
+  </div>
+  </div>
+</div>
+  
+ 
+<div align="center">
+  <%= will_paginate @category_articles %>
+</div>

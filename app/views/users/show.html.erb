@@ -1,0 +1,56 @@
+
+    
+    <div class="profile-page" style="background-image: url('<%= url_for(@user.authorc) if @user.authorc.attached? %>');">
+      <div class="container">
+        
+        <h2 class="page-header">
+        Welcome to <%= @user.username %>'s Page
+      </h2>
+      
+      <div class="profile-image">
+        <%= gravatar_for @user, size: 180 %>
+      </div>
+      <div class="bio">
+        <%= @user.bio %>
+      </div>
+      <div class="social">
+          <% unless @user.facebook.nil? %>
+            <a href=" <%= @user.facebook %>"><i class="fa fa-facebook"></i></a>
+           <% end %>
+
+          <% unless @user.twitter.nil? %>
+          <a href=" <%= @user.twitter %>"><i class="fa fa-twitter"></i></a>
+          <% end %>
+      </div>
+      
+        
+      </div>
+      
+</div>
+  
+   <div class="container">
+     
+      <div class="users-articles">
+        
+        <h3>
+      <%= @user.username %>'s Article
+    </h3>
+        
+    </div>
+    
+    <%= render 'articles/article', obj: @user_articles %>
+     <%= will_paginate(@user_articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-lg') %>
+    
+     
+</div>
+     
+  
+
+
+  
+
+
+
+
+
+

@@ -1,0 +1,145 @@
+<%= form_for @setting, :url => admin_setting_path(@setting), :html => {class: "form-custom",} do |f| %>
+ <legend>Site Settings</legend>
+ <ul class="nav nav-tabs" id="settingTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="general-setting" data-toggle="tab" href="#general" role="tab" aria-controls="home" aria-selected="true">General Settings</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="home-setting" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Homepage Settings</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">SMTP Settings</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-setting">
+    <div class="edit-setiing-inner">
+        <div class="form-group">
+          <%= f.label "Site Title" %> 
+          <%= f.text_field :site_title, class: "form-control", autofoucs: true %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label "Site Tagline" %> 
+          <%= f.text_field :site_tag, class: "form-control", autofoucs: true %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label "Site Email" %> 
+          <%= f.email_field :admin_email, class: "form-control", autofoucs: true %>
+        </div>
+     
+         <div class="form-group">
+            <%= f.label "Site logo" %> 
+            <%= f.file_field :site_logo, class: "form-control-file", autofoucs: true %>
+            <% if @setting.site_logo.attached? %>
+            <figure class="attachment">
+            	<%= image_tag @setting.site_logo, width: "150" %>
+            </figure>
+            <div class="form-group">
+              <div class="form-check-box">
+                <%= f.check_box :remove_site_logo %>
+                <%= f.label :remove_site_logo %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="form-group">
+            <%= f.label "Items Per Page" %> 
+            <%= f.select :item_per_page, ['9', '15', '25'], class: "custom-select custom-select-lg mb-3" %>
+        </div>
+    </div>
+  </div>
+  
+  
+  <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-setting">
+     <div class="edit-setiing-inner">
+        <legend>Hero Unit</legend>
+        <div class="form-group">
+        <%= f.label "Title" %> 
+        <%= f.text_field :hero_title, class: "form-control", autofoucs: true %>
+        </div>
+        <div class="form-group">
+        <%= f.label "Content", class: "control-label" %> 
+        <%= f.text_area :hero_content, class: "form-control" %>
+        </div>
+        <div class="form-group">
+        <%= f.label "Image" %> 
+        <%= f.file_field :hero_image, class: "form-control-file" %>
+         <% if @setting.hero_image.attached? %>
+            <figure class="attachment">
+            <%= image_tag @setting.hero_image, width: "150" %>
+             </figure>
+          <% end %>
+        </div>
+        <div class="form-group">
+        <%= f.label "Hero Background Image" %> 
+        <%= f.file_field :hero_bg, class: "form-control-file" %>
+         <% if @setting.hero_bg.attached? %>
+            <figure class="attachment">
+            <%= image_tag @setting.hero_bg, width: "250"%>
+             </figure>
+          <% end %>
+        </div>
+        <div class="form-group">
+        <%= f.label "Hero Button Label" %> 
+        <%= f.text_field :hero_button_text, class: "form-control", autofoucs: true %>
+        </div>
+        <div class="form-group">
+        <%= f.label "Hero Button Link" %> 
+        <%= f.text_field :hero_button_link, class: "form-control", autofoucs: true %>
+        </div>
+        <div class="form-group">
+        	<div class="custom-control custom-checkbox mr-sm-2">
+        		 <%= f.check_box :display_hero, class: "custom-control-input", id: "customControlAutosizing" %>
+		        <%= f.label "Display Hero?", class: "custom-control-label", for: "customControlAutosizing" %> 
+		       
+        	</div>
+        </div>
+     </div>
+    
+    
+  </div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <div class="edit-setiing-inner">
+      <legend>Enable SMTP for the app</legend>
+      <div class="form-group">
+        <div class="form-check-box">
+          <%= f.check_box :enable_smtp %>
+          <%= f.label :enable_smtp %>
+        </div>
+      </div>
+    	<legend>Define your SMTP Credentials Here</legend>
+        <div class="form-group">
+        <%= f.label "SMTP Host" %> 
+        <%= f.text_field :smtp_host, class: "form-control", autofoucs: true %>
+        </div>
+        <div class="form-group">
+        <%= f.label "SMTP Port" %> 
+        <%= f.select :smtp_port, ['25', '465', '587'],  class: "custom-select" %>
+        </div>
+        <div class="form-group">
+        <%= f.label "SMTP Domain" %> 
+        <%= f.text_field :domain, class: "form-control" %>
+        </div>
+        <div class="form-group">
+        <%= f.label "SMTP Username" %> 
+        <%= f.text_field :smtp_user, class: "form-control" %>
+        </div>
+        <div class="form-group">
+        <%= f.label "SMTP Password" %> 
+        <%= f.text_field :smtp_password, class: "form-control" %>
+        </div>
+    </div>
+  </div>
+</div>
+  
+  
+  
+  
+  
+  <p>
+    <%= f.submit "Update Site Setting", class: "btn btn-success"%>
+  </p>
+  <% end %>

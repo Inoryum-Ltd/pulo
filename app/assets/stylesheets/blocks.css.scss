@@ -1,0 +1,32 @@
+.seed-default {
+    display: flex;
+    min-height: 400px;
+    background: #1e38a3;
+    color: #fff;
+    flex-direction: row;
+    justify-content: center;
+    place-items: center;
+}
+.main .block {
+    margin-bottom: 2em ;
+}
+.block img {
+    width: 100%;
+}
+.page-footer {
+    background: #f3f5fb;
+    padding: 3em 0;
+}
+.page-footer-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -1em;
+    margin-right: -1em;
+}
+.page-footer-item {
+    flex: 1 1 150px;
+    background: #ffff;
+    margin: 1em;
+    padding: 1em;
+}

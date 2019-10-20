@@ -1,0 +1,60 @@
+<div class="container">
+  
+<h2>
+  Create Block
+</h2>
+
+<%= render 'shared/errors', obj: @block %>
+
+  <%= form_for @block, :url => url_for(:controller => 'admin/blocks', :action => 'create'), :html => {class: "form-custom",} do |f| %>
+
+    <div class="form-group">
+      <%= f.label :title %> 
+      <%= f.text_field :title, class: "form-control", autofoucs: true %>
+  </div>
+  
+  <div class="form-group">
+        	<div class="custom-control custom-checkbox mr-sm-2">
+        		 <%= f.check_box :show_title, class: "custom-control-input", id: "customControlAutosizing" %>
+		        <%= f.label "Show Title?", class: "custom-control-label", for: "customControlAutosizing" %> 
+		       
+        	</div>
+        </div>
+
+    <div class="form-group">
+      <%= f.label :body %>
+     
+      <%= f.text_area :body, class: "form-control" %>
+    </div>
+
+
+
+<div class="form-group">
+	<%= f.label "Page Assignment" %>
+    <%= f.collection_check_boxes(:page_ids, Page.all, :id, :title) do |b| %>    
+    <div class="form-check-box">
+    <%= b.check_box %> <%= b.label %>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+	  <%= f.label "Block Position" %>
+    <%= f.select :block_position, ["Top", "Bottom", "Left", "Right", "Footer"] %>
+  </div>
+  
+  <div class="form-group">
+      <%= f.label :block_class %>
+     
+      <%= f.text_field :block_class, class: "form-control" %>
+    </div>
+  
+
+  <p>
+    <%= f.submit class: "btn btn-success"%>
+  </p>
+
+<% end %>
+
+  
+  </div>

@@ -1,0 +1,36 @@
+<div class="admin-content-header">
+  <div class="admin-content-header-title">
+  <h2>
+  Pages
+</h2>
+</div>
+<div class="admin-content-header-action">
+  <%= link_to 'New Page',  new_admin_page_path, class: "btn btn-outline-info" %>
+</div>
+</div>
+
+<ul class="items-listing">
+  <li class="item-listing-inner table-title">
+      <div class="listing-items date"><b>Date</b></div>
+      <div class="listing-items title"><b>Title</b></div>
+      <div class="listing-items page-assignment"></div>
+      <div class="listing-items action">
+        <b>Action</b>
+      </div>
+    </li>
+  <% @pages.each do |page| %>
+    <li class="item-listing-inner">
+      <div class="listing-items date"><%= page.created_at.strftime("%b %d, %Y") %></div>
+      <div class="listing-items title"><b><%= page.title %></b></div>
+      <div class="listing-items page-assignment"> </div>
+      <div class="listing-items action">
+        <%= link_to '', page_path(page), class: "fa fa-globe"  %>
+        <%= link_to '', edit_admin_page_path(page), class: "fa fa-edit" %>
+        <%= link_to '', admin_page_url(page), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash" %>
+      </div>
+    </li>
+  <% end %>
+  
+</ul>
+
+

@@ -1,0 +1,43 @@
+
+  
+<h2>
+  Add Page
+</h2>
+
+<%# render 'shared/errors', obj: @page %>
+
+  <%= form_for @page, :url => url_for(:controller => 'admin/pages', :action => 'create'), :html => {class: "form-custom",} do |f| %>
+
+    <div class="form-group">
+      <%= f.label :title %> 
+      <%= f.text_field :title, class: "form-control", autofoucs: true %>
+  </div>
+
+    <div class="form-group">
+      <%= f.label :body %>
+     
+      <%= f.rich_text_area :body, class: "" %>
+  </div>
+  
+  <div class="form-group">
+      <%= f.label :page_cover %>
+      <%= f.file_field :page_cover, class: "form-control" %> 
+  </div>
+
+<div class="form-group">
+      <%= f.label :page_class %>
+      <%= f.text_field :page_class, class: "form-control" %> 
+   
+  </div>
+  <div class="form-group">
+      <div class="custom-control custom-checkbox">
+         <%= f.check_box :add_menu, class: "custom-control-input" %>
+         <label class="custom-control-label" for="page_add_menu">Add to Menu?</label>
+      </div>
+  </div>
+
+  <p>
+    <%= f.submit class: "btn btn-success"%>
+  </p>
+
+<% end %>

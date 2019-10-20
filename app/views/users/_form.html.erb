@@ -1,0 +1,62 @@
+<%= render 'shared/errors', obj: @user %>
+
+
+  <%= form_for @user, :html => {class: "form-custom",} do |f| %>
+
+    <% if @user.new_record? %>
+          <div class="form-group">
+            <%= f.label :username %> 
+            <%= f.text_field :username, class: "form-control", autofoucs: true %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, class: "form-control" %>
+           </div>
+          <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "form-control" %>
+          </div>
+
+<% else %>
+
+ <div class="form-group">
+      <%= f.label :username %> 
+      <%= f.text_field :username, class: "form-control", autofoucs: true %>
+  </div>
+
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :bio %>
+        <%= f.text_area :bio, rows: 5, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+              <%= f.url_field :facebook, class: "form-control", placeholder: "Enter your Facebook URL" %>
+            </div>
+            <div class="col">
+              <%= f.url_field :twitter, class: "form-control", placeholder: "Enter your Twitter URL" %>
+            </div>
+          </div>
+      </div>
+
+<% end %>
+
+  <p>
+    <%= f.submit(@user.new_record? ? "Sign Up" : "Update Account", class: "btn btn-success")%>
+  </p>
+
+<% end %>
+  
+<%= link_to 'Back to acticle listing', articles_path %> 

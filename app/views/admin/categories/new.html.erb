@@ -1,0 +1,27 @@
+<%# render 'shared/errors', obj: @admin_category %>
+
+  <%= form_for @admin_category, :url => url_for(:controller => 'admin/categories', :action => 'create'), :html => {class: "form-custom",} do |f| %>
+
+    <div class="form-group">
+      <%= f.label :name %> 
+      <%= f.text_field :name, class: "form-control", autofoucs: true %>
+  </div>
+
+    <div class="form-group">
+      <%= f.label :description %>
+     
+      <%= f.text_area :description, rows: 10, class: "form-control", id: "counted" %>
+      
+    
+  </div>
+
+<div class="form-group">
+    <%= f.label :cover_image_cat, "Cover Image" %><br>
+    <%= f.file_field :cover_image_cat, direct_upload: true %>
+  </div>
+
+  <p>
+    <%= f.submit class: "btn btn-success"%>
+  </p>
+
+<% end %>

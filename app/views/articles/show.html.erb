@@ -1,0 +1,69 @@
+<div class="single-header" style="background-image:url('<%= url_for(@article.featured_image) if @article.featured_image.attached? %>');">
+  <div class="ov"></div>
+  <h2>
+   <%= @article.title %>
+</h2> 
+</div>
+<div class="container artcle-wrapper">
+<div class="row">
+  <article class="rounded col-8 col-md-8 col-sm-12">
+  <% if @article.featured_image.attached? %>
+    <figure class="featured-image">
+      <%= image_tag @article.featured_image.variant(resize_to_limit: [800, 800]), class: "img-fluid" %>
+    </figure>
+  <% end %>
+        <%=  @article.description %>
+    <% if @article.categories.any? %>
+    <p>Categories: <%= render @article.categories %></p>
+  <% end %>
+<div class="article-action-btn text-center mt-5">
+   <% if user_signed_in? && (current_user == @article.user || current_user.admin?) %>
+    <%# link_to 'Edit', edit_article_path(@article), class: "btn btn-primary btn-sm" %> 
+    <%# link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>
+  <% end %>
+  <%= link_to 'Back', :back, class: "btn btn-info btn-sm" %> 
+    </div>
+</article>
+  <aside class="col-4 col-md-4">
+    <div class="author">
+      <div class="author-header-image" style="background-image: url('<%= url_for(@article.user.authorc) if @article.user.authorc.attached?%>')">
+        
+      </div>
+      <div class="author-card">
+        <div class="profile-image">
+          <%= link_to gravatar_for(@article.user, size: 80),  user_path(@article.user) %>
+      </div>
+         <%= link_to @article.user.username, user_path(@article.user), class: "author-name" %>
+         <small> <em>Worte <%= pluralize(@article.user.articles.count, "article") if @article.user.articles %> </em></small>
+      </div>
+     
+    </div>
+    <div class="recent ars">
+      <h2>Trending</h2>
+    <% recent_articles.each do |article| %>
+      <div class="recen-items">
+              <div class="recent-content" style="background-image: url('<%= url_for(article.featured_image) if article.featured_image.attached? %>')">
+                <div class="ov"></div>
+                
+                  <%= link_to article.title,  article_path(article), class: "recent-titile" %>
+                
+               
+                <div class="meta-r">
+                  <i class="fa fa-calendar"></i> <%= article.created_at.to_date %>
+                </div> 
+              </div>
+      </div>
+      <% end %>
+  </div>
+  
+  <div class="Catrgories-sp">
+    <h2>Categories</h2>
+    <% Category.all.each do |category| %>
+              <%= link_to "#{category.name}", category_path(category) %>
+            <% end %>
+  </div>
+  
+  </aside>
+</div>
+</div>
+

@@ -1,0 +1,56 @@
+<div class="container">
+  
+<h2>
+  Edit Project
+</h2>
+
+<%= render 'shared/errors', obj: @project %>
+
+  <%= form_for @project, :url => url_for(:controller => 'admin/projects', :action => 'update'), :html => {class: "form-custom",} do |f| %>
+
+    <div class="form-group">
+      <%= f.label :title %> 
+      <%= f.text_field :title, class: "form-control", autofoucs: true %>
+  </div>
+
+    <div class="form-group">
+      <%= f.label :description %>
+     
+      <%= f.rich_text_area :description, class: "" %>
+  </div>
+
+<div class="form-group">
+     <label>Project Link</label>
+      <%= f.url_field :project_link, direct_upload: true, class: "form-control" %> 
+   
+  </div>
+   <div class="form-group">
+     <label>Project Image</label>
+      <%= f.file_field :project_image, class: "form-control" %> 
+  </div>
+    <% if @project.project_image.attached? %>
+      <figure class="attachment">
+        <%= image_tag @project.project_image.variant(resize: "80x80") %>
+      </figure>
+      <div class="form-group">
+        <div class="form-check-box">
+          <%= f.check_box :remove_project_image %>
+          <%= f.label :remove_project_image %>
+        </div>
+      </div>
+    <% end %>
+
+
+<div class="form-group">
+	<%= f.label "Project Type" %>
+    <%= f.collection_select(:project_type_id, ProjectType.all, :id, :name) %>
+  </div>
+
+  <p>
+    <%= f.submit class: "btn btn-success"%>
+  </p>
+
+<% end %>
+
+  
+  </div>

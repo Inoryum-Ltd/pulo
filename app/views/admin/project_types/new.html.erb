@@ -1,0 +1,13 @@
+<% render 'shared/errors', obj: @ProjectType %>
+
+  <%= form_for @ProjectType, :url => url_for(:controller => 'admin/project_types', :action => 'create'), :html => {class: "form-custom",} do |f| %>
+
+    <div class="form-group">
+      <%= f.label :name %> 
+      <%= f.text_field :name, class: "form-control", autofoucs: true %>
+  </div>
+  <p>
+    <%= f.submit class: "btn btn-success"%>
+  </p>
+
+<% end %>

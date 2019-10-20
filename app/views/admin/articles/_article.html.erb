@@ -1,0 +1,21 @@
+
+  <% obj.each do |article| %>
+    <li class="item-listing-inner">
+      <div class="listing-items date"><%= article.created_at.strftime("%b %d, %Y") %></div>
+      <div class="listing-items title"><b><%= truncate(article.title, length: 65) %></b></div>
+      <div class="listing-items article_catogory"> <%= render article.categories if article.categories.any? %> </div>
+      <div class="listing-items teatured_article_index">
+        <% if article.featured? %>
+          yes
+        <% else %>
+          No
+        <% end %>
+      </div>
+      <div class="listing-items action">
+        <%= link_to '', article_path(article), class: "fa fa-globe"  %>
+        <%= link_to '', edit_admin_article_path(article), class: "fa fa-edit" %>
+        <%= link_to '', admin_article_url(article), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash" %>
+      </div>
+    </li>
+  <% end %>
+ 
