@@ -1,5 +1,6 @@
 class Admin::SettingsController < Admin::BaseController
 	 before_action :set_setting, only: [:update]
+	 before_action :require_admin
 	def index
 		@setting = Setting.first
 	end
@@ -28,4 +29,11 @@ class Admin::SettingsController < Admin::BaseController
 																			:hero_content, :hero_button_text, :hero_button_link, :item_per_page, :smtp_host, :smtp_port, 
 																			:smtp_user, :smtp_password, :admin_email, :remove_site_logo, :enable_smtp ) 
 	end
+	
+	def require_admin
+    if !user_signed_in? || (user_signed_in? and !current_user.admin?) # two Conditions one If not loggedin & loggin but current user not admin
+	    flash[:danger] = 'You are not allowed to perform this action'
+	    redirect_to admin_root_path
+  	end
+  end
 end
