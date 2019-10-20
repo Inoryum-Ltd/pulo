@@ -15,8 +15,12 @@ PuLo is a simple yet powerful open-source Content Management System powered by R
 
 1. **Clone the ropository** 
 2. ```cd pulo```
-2. Run Bundle ```bundle install```
-3. Run ```mv config/sample_sqlite3_database.yml config/database.yml```
-4. Run ```rails db:create db:migrate db:seed```
-5. Start the server ```rails server```
+3. Run Bundle ```bundle install```
+4. Run ```mv config/sample_sqlite3_database.yml config/database.yml```
+5. Run ```rails db:create db:migrate db:seed```
+6. Start the server ```rails server```
 
+#### Default Admin Login
+
+***Username:*** admin@domain.com <br>
+***Password:*** password
