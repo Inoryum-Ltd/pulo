@@ -1,0 +1,36 @@
+<div class="admin-content-header">
+  <div class="admin-content-header-title">
+  <h2>
+  Users
+</h2>
+</div>
+<div class="admin-content-header-action">
+  <%= link_to 'New User',  new_admin_user_path, class: "btn btn-outline-info" %>
+</div>
+</div>
+
+
+
+<ul class="items-listing">
+  <li class="item-listing-inner table-title">
+      <div class="listing-items date"><b>Date</b></div>
+      <div class="listing-items title"><b>User Name</b></div>
+      <div class="listing-items page-assignment"><b>Email</b></div>
+      <div class="listing-items action">
+        <b>Action</b>
+      </div>
+    </li>
+  <% @users.each do |user| %>
+    <li class="item-listing-inner">
+      <div class="listing-items date"><%= user.created_at.strftime("%b %d, %Y") %></div>
+      <div class="listing-items title"><b><%= user.username %></b></div>
+      <div class="listing-items page-assignment"> <%= user.email %> </div>
+      <div class="listing-items action">
+        <%= link_to '', user_path(user), class: "fa fa-globe"  %>
+        <%= link_to '', edit_admin_user_path(user), class: "fa fa-edit" %>
+        <%= link_to '', admin_user_url(user), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash" %>
+      </div>
+    </li>
+  <% end %>
+  
+</ul>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :projects, except: [:show]
       resources :pages
       resources :blocks
+      resources :users, except: [:show]
       resources :settings, only: [:update, :index]
     end
 
@@ -21,10 +22,10 @@ Rails.application.routes.draw do
   get 'home/index'
   root 'pages#show', defaults: { id: 1 }
   resources :articles, path: 'blog', only: [:index, :show]
-  resources :users, only: [:index, :show]
   resources :categories, only: [:show]
   get 'contact', to: 'contacts#new'
   resources :contacts, except: [:new]
   resources :projects, only: [:show, :index]
   resources :pages, only: [:show]
+  resources :users, only: [:show]
 end

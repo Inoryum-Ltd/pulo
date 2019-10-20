@@ -34,4 +34,13 @@ class User < ApplicationRecord
   #    AdminMailer.new_user_signed_up(email).deliver
   #  end
   #end
+  
+  attr_accessor :remove_cover_image
+
+  after_save :purge_cover_image, if: :remove_cover_image
+
+  private def purge_cover_image
+    authorc.purge
+  end
+  
 end

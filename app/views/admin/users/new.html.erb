@@ -1,0 +1,68 @@
+<div class="container">
+  
+<h2>
+  Add User
+</h2>
+
+<%= render 'shared/errors', obj: @user %>
+
+<%= form_for @user, :url => url_for(:controller => 'admin/users', :action => 'create'), :html => {class: "form-custom",} do |f| %>
+
+  <div class="form-group">
+    <%= f.label "User Name" %> 
+    <%= f.text_field :username, class: "form-control", autofoucs: true %>
+  </div>
+  
+  <div class="form-group">
+  	<label>Make this user admin?</label>
+  	<div class="form-check-box">
+  		<%= f.check_box :admin %>
+  		<%= f.label 'grant Admin Access' %>
+  	</div>
+   </div>
+ 
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control", autocomplete: "email" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :bio %>
+    <%= f.text_area :bio, rows: 5, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col">
+        <%= f.url_field :facebook, class: "form-control", placeholder: "Enter your Facebook URL" %>
+      </div>
+      <div class="col">
+        <%= f.url_field :twitter, class: "form-control", placeholder: "Enter your Twitter URL" %>
+      </div>
+    </div>
+  </div>
+  
+  
+	<div class="form-group">
+	  <%= f.label "Cover Image" %><br>
+	  <%= f.file_field :authorc, direct_upload: true, class: "form-control-file" %>
+	</div>
+    
+  <div class="actions">
+    <%= f.submit "Create User", class: "btn btn-success" %>
+  </div>
+
+<% end %>
+
+  
+  </div>

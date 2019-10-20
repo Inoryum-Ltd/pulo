@@ -15,7 +15,11 @@ class UsersController < ApplicationController
     end
   end
   
-  
+  def destroy
+    @user.destroy
+    flash[:danger] = "User and all articles created by user have been deleted"
+    redirect_to users_path
+  end
   
   def show
     @user_articles = @user.articles.paginate(page: params[:page], per_page: 6)
@@ -39,7 +43,7 @@ class UsersController < ApplicationController
   
   
   def require_admin
-    if user_signed_in and !current_user.admin?
+    if user_signed_in? and !current_user.admin?
       flash[:danger] = 'Only Admin can Perform this Action'
       redirect_to root_path
     end

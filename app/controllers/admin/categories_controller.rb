@@ -65,10 +65,10 @@ class Admin::CategoriesController < Admin::BaseController
     end
     
      def require_admin
-    if !user_signed_in? || (user_signed_in? and !current_user.admin?) # two Conditions one If not loggedin & loggin but current user not admin
+      if !user_signed_in? || (user_signed_in? and !current_user.admin?) # two Conditions one If not loggedin & loggin but current user not admin
       flash[:danger] = 'You are not allowed to perform this action'
       redirect_to admin_root_path
-      
     end
   end
+  
 end
