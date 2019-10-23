@@ -54,4 +54,3 @@ gem "actiontext", require: "action_text"
 gem "image_processing", "~> 1.2"
 gem 'webpacker', '~> 4.x'
 gem 'devise'
-gem "lazyload-rails"

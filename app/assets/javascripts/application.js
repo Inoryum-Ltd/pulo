@@ -15,7 +15,8 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require activestorage
-//= require jquery.lazyload
+//= require jquery.lazy.min.js
+//= jquery.lazy.plugins.min.js
 //= require turbolinks
 //= require_tree .
 //= require_self

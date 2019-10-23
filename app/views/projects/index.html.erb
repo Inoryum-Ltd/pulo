@@ -13,7 +13,9 @@
       <div class="project-wrapper">
     	<% @projects.each do |p| %>
       	 <a href="<%= project_path(p) %>" class="project-items gallery_product filter <%= p.project_type_id %>">
-                 <%= image_tag (p.project_image.variant(resize: "550x550")), lazy: true, class: "img-fluid" if p.project_image.attached? %>
+      	 <% if p.project_image.attached? %>
+                <%= image_tag '/images/loading.gif', data: { src: "#{url_for(p.project_image.variant(resize: "550x550"))}"}, class: "img-fluid lazy" %>
+              <% end %>
             </a>
 <% end %>
  

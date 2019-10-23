@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="col-md-6 text-center">
 			<% if @project.project_image.attached? %>
-				<%= image_tag (@project.project_image), lazy: true, class: "img-fluid" %>
+				<%= image_tag '/images/loading.gif', data: { src: "#{url_for(@project.project_image)}"}, class: "img-fluid lazy" %>
 			<% end %>
 		</div>
 		<div class="col-md-6">
