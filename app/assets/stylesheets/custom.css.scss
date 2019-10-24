@@ -629,3 +629,47 @@ body.sessions.new .navbar, .registrations.new .footer, body.sessions.new .footer
 .form-check-box input[type="checkbox"]:focus + label::before {
     outline: rgb(59, 153, 252) auto 5px;
 }
+
+
+/* Error Pages */
+
+.errors-page {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.errors-page .notfound {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.notfound .notfound-404 {
+    position: relative;
+    height: 170px;
+    line-height: 150px;
+    margin-bottom: 25px;
+}
+.notfound .notfound-404 h1 {
+    font-family: titillium web,sans-serif;
+    font-size: 186px;
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+}
+.notfound h2 {
+    font-family: titillium web,sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.notfound p {
+    font-family: montserrat,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+}

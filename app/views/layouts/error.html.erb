@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= setting.site_title %> - <%= setting.site_tag if setting.site_tag %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+ <body role="document" class="<%= controller.controller_name %> <%= controller.action_name %> ">
+ 
+ </body>
+    <%= render 'layouts/messages' %>
+    <div class="errors-page">
+    <%= yield %>
+    </div>
+  </body>
+</html>

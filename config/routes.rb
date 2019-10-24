@@ -28,4 +28,8 @@ Rails.application.routes.draw do
   resources :projects, only: [:show, :index]
   resources :pages, only: [:show]
   resources :users, only: [:show]
+  
+  match "/404", to: "errors#not_found", via: :all
+  match "/422", to: "errors#unacceptable", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
 end
