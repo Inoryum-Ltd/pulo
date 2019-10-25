@@ -21,8 +21,12 @@
   </div>
 
 <div class="form-group">
-     <label>Featured Article?</label>
+  <legend>Feature this article?</legend>
+  <div class="form-check-box">
       <%= f.check_box :featured %> 
+      <%= f.label :featured %>
+  </div>
+     
    
   </div>
 
@@ -43,8 +47,11 @@
   <% end %>
 
 <div class="form-group">
-    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>    
+  <legend>Select Categories</legend>
+    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>   
+    <div class="form-check-box">
     <%= b.check_box %> <%= b.label %>
+    </div>
   <% end %>
 
 
