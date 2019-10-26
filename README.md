@@ -1,7 +1,9 @@
 # PuLo <br><em>Flexible Modern Ruby on Rails CMS For Everyone</em>
 
 
-PuLo is a simple yet powerful open-source Content Management System powered by Ruby on Rails. 
+PuLo is a simple yet powerful open-source Content Management System powered by Ruby on Rails.
+
+![PuLo Screenshot](https://res.cloudinary.com/dgm5fyoub/image/upload/v1572133040/sbkexz5xi1asrigawmdl.png)
 
 
 ### Requirments
