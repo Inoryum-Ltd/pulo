@@ -17,7 +17,7 @@
   	<label>Make <%= @user.username %> admin?</label>
   	<div class="form-check-box">
   		<%= f.check_box :admin %>
-  		<%= f.label 'grant Admin Access' %>
+  		<%= f.label 'grant Admin Access', for: "user_admin" %>
   	</div>
    </div>
  

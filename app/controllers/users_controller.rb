@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   
   def show
     @user_articles = @user.articles.paginate(page: params[:page], per_page: 6)
+    @page_title = @user.username
   end
   
   

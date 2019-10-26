@@ -1,0 +1,22 @@
+<Section class="cat-section">
+    <h2 class="text-center">Stories By Catrgory</h2>
+    <div class="container">
+      <div class="classified-contents">
+        <% categories_home.each do |category| %>
+          <div class="cat">
+            <%= link_to category.name, category_path(category), class: "cat-title" %>
+              <% category.article.order("created_at desc").limit(5).each do |category_articles| %>
+              <div class="cat-articles">
+                <div class="recent-thumb lazy" data-src="<%= url_for(category_articles.featured_image) if category_articles.featured_image.attached? %>">
+              </div>
+              <div class="recent-content">
+                <%= link_to category_articles.title,  article_path(category_articles), class: "recent-titile" %>
+                <span style="display: block;font-size: 14px;margin-top: -5px;"><small><em>By <%= link_to category_articles.user.username,  user_path(category_articles.user) %></em></small></span>
+               </div>
+               </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </Section>

@@ -7,12 +7,7 @@
 <div class="container artcle-wrapper">
 <div class="row">
   <article class="rounded col-8 col-md-8 col-sm-12">
-  <% if @article.featured_image.attached? %>
-    <figure class="featured-image">
-      <%= image_tag @article.featured_image.variant(resize_to_limit: [800, 800]), class: "img-fluid" %>
-    </figure>
-  <% end %>
-        <%=  @article.description %>
+    <%=  @article.description %>
     <% if @article.categories.any? %>
     <p>Categories: <%= render @article.categories %></p>
   <% end %>

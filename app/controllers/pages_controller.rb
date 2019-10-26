@@ -9,6 +9,7 @@ def show
 	@page_blocks_footer = @page_blocks.where(:block_position => 'Footer')
 	@page_blocks_left = @page_blocks.where(:block_position => 'Left')
 	@page_blocks_right = @page_blocks.where(:block_position => 'Right')
+	@page_title = @page.title
 end
 
 end

@@ -1,12 +1,11 @@
 
 <div class="grid-wrapper">
   <% obj.each do |article| %>
-
   <div class="gird-items reveal">
     <div class="article-grid">
       <div class="featured-image-outer">
       <% if article.featured_image.attached? %>
-          <figure class="featured-image" style="background-image: url('<%= url_for(article.featured_image) %>');">
+          <figure class="featured-image lazy" data-src="<%= url_for(article.featured_image) %>">
           </figure>
          <% end %>
          </div>
@@ -16,7 +15,6 @@
        <div class="limit_text">
         <%# article.description %>
         </div>
-
         <div class="article-meta">
           <small>
           <i class="fa fa-user"></i> <%= link_to article.user.username, article.user if article.user %>,
@@ -25,16 +23,9 @@
           Last Updated: <%= time_ago_in_words(article.updated_at) %> ago
             <% end %>
             </small>
-
-
         </div>
-      
-   </div>
-    
- 
+    </div>
 </div>
-
-    
   <% end %>
- </div>
+</div>
 

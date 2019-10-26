@@ -1,0 +1,24 @@
+<section class="home-featured">
+  <div class="featured-articles">
+    <% featured_articles.each do |farticle| %>
+      <div class="featured-items">
+        <% if farticle.featured_image.attached? %>
+          <div class="featured-thumb lazy" data-src="<%= url_for(farticle.featured_image) %>">
+          </div>
+          <% else %>
+            <div class="featured-thumb">
+            </div>
+            <% end %>
+            <div class="ov"></div>
+              <div class="featured-content">
+                <h5>
+                  <%= link_to farticle.title,  article_path(farticle) %>
+                </h5>
+                <% if farticle.categories.any? %>
+    <p> <%= render farticle.categories %></p>
+  <% end %>
+              </div>
+      </div>
+      <% end %>
+  </div>
+</section>

@@ -1,7 +1,9 @@
-
-
+<div class="jumbotron text-light bg-primary rounded-0 text-center">
+	<div class="container">
+		<h1 class="display-4 mt-4">Edit Profile</h1>
+	</div>
+ </div>
 <div class="container">
-  <h2>Edit Profile</h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -9,7 +11,7 @@
       <%= f.label :username %> 
       <%= f.text_field :username, class: "form-control", autofoucs: true %>
   </div>
- <%= f.check_box :admin, class: "form-control", autofoucs: true %>
+
   <div class="form-group">
     <%= f.label :email %><br />
     <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
