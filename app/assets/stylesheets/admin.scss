@@ -100,6 +100,8 @@
     padding: 0;
     list-style: none;
     border: 1px solid #d4dde3;
+    border-radius: 7px;
+    overflow: hidden;
 }
 
 .item-listing-inner {
@@ -112,6 +114,17 @@
     border-bottom: 1px solid #d4dde3;
     transition: all ease 300ms;
 }
+.item-listing-inner.table-title {
+    border-bottom: 1px solid #e5eff5;
+    color: #b8c7d2;
+    font-weight: 400;
+}
+
+.item-listing-inner.table-title:hover {
+    background: #fff;
+}
+
+
 .item-listing-inner:last-child {
     border-bottom: 0;
 }

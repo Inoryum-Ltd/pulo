@@ -1,6 +1,6 @@
 <div class="page-wrapper <%= @page.page_class if @page.page_class.present? %>">
 <% if @page.page_cover.attached? %>
-	<header class="page-header" style="background-image: url('<%= rails_blob_path(@page.page_cover, disposition: "attachment", only_path: true) %>')">
+	<header class="page-header lazy" data-src="<%= rails_blob_path(@page.page_cover, disposition: "attachment", only_path: true) %>">
 		<div class="ov"></div>
 		<h2 class="page-header-title"><%= @page.title %></h2>
 	</header>
