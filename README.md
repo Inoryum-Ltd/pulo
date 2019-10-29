@@ -5,6 +5,11 @@ PuLo is a simple yet powerful open-source Content Management System powered by R
 
 ![PuLo Screenshot](https://res.cloudinary.com/dgm5fyoub/image/upload/v1572133040/sbkexz5xi1asrigawmdl.png)
 
+### Demo
+
+url: https://pulo-demo.thesaleheen.com
+
+Signup & explore the backend of PuLo
 
 ### Requirments
 
@@ -15,7 +20,7 @@ PuLo is a simple yet powerful open-source Content Management System powered by R
 ### Installation
 
 
-1. **Clone the ropository** 
+1. **Clone the repository** 
 2. ```cd pulo```
 3. Run Bundle ```bundle install```
 4. Run ```mv config/sample_sqlite3_database.yml config/database.yml```
