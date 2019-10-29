@@ -10,6 +10,7 @@ def show
 	@page_blocks_left = @page_blocks.where(:block_position => 'Left')
 	@page_blocks_right = @page_blocks.where(:block_position => 'Right')
 	@page_title = @page.title
+	@page_description = @page.body.to_s
 end
 
 end

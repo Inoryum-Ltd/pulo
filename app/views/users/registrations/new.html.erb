@@ -1,10 +1,11 @@
+
 <div class="authouter">
   <div class="single-header">
     <div class="ov"></div>
     <h2><%= link_to setting.site_title, root_path, class: "navbar-brand" %></h2>
   </div>
   <div class="authform">
-<h2>Sign up!</h2>
+<h2><%= title 'Sign Up!' %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>

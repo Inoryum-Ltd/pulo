@@ -4,7 +4,7 @@
     <h2><%= link_to setting.site_title, root_path, class: "navbar-brand" %></h2>
   </div>
   <div class="authform">
-<h2>Welcome Back!</h2>
+<h2><%= title 'Welcome Back!' %></h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-group">

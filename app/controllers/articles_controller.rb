@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.friendly.find(params[:id])
     @page_title = @article.title
+    @page_description = @article.description.to_s
   end
   
 
