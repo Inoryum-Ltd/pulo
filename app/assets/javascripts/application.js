@@ -18,6 +18,7 @@
 //= require jquery.lazy.min.js
 //= jquery.lazy.plugins.min.js
 //= require turbolinks
+//= require codemirror
 //= require_tree .
 //= require_self
 

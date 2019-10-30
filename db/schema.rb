@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_184027) do
+ActiveRecord::Schema.define(version: 2019_10_30_070027) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -149,6 +149,8 @@ ActiveRecord::Schema.define(version: 2019_10_19_184027) do
     t.string "hero_button_link"
     t.string "item_per_page"
     t.boolean "enable_smtp", default: false
+    t.text "code_header"
+    t.text "code_footer"
     t.index ["slug"], name: "index_settings_on_slug", unique: true
   end
 

@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= raw setting.code_header %>
   </head>
 
  <body role="document" class="<%= controller.controller_name %> <%= controller.action_name %> <%= @page.page_class if @page.page_class? %>" data-controller="<%= controller.controller_path %>" data-action="<%= controller.action_name %>">
@@ -16,6 +17,7 @@
     <%= yield %>
     <%= render 'layouts/footer' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= raw setting.code_footer %>
   </body>
   
 </html>
