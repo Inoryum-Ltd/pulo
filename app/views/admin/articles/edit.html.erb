@@ -36,7 +36,7 @@
   </div>
   <% if @article.featured_image.attached? %>
     <figure class="attachment">
-        <%= image_tag @article.featured_image.variant(resize_to_limit: [100, 100]) %>
+        <%= image_tag @article.featured_image, width:100, height: "auto" %>
     </figure>
     <div class="form-group">
       <div class="form-check-box">

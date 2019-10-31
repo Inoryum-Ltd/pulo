@@ -21,7 +21,7 @@
 </div>
   <% if @admin_category.cover_image_cat.attached? %>
   <figure class="attachment">
-      <%= image_tag @admin_category.cover_image_cat.variant(resize_to_limit: [200, 200]) %>
+      <%= image_tag @admin_category.cover_image_cat, width: 200 %>
       </figure>
       <div class="form-group">
         <div class="form-check-box">

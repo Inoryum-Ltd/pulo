@@ -23,7 +23,7 @@
     </div>
      <% if @page.page_cover.attached? %>
       <figure class="attachment">
-          <%= image_tag @page.page_cover.variant(resize_to_limit: [200, 200]) %>
+          <%= image_tag @page.page_cover, width: 200 %>
       </figure>
       <div class="form-group">
         <div class="form-check-box">

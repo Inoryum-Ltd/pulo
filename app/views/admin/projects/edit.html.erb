@@ -30,7 +30,7 @@
   </div>
     <% if @project.project_image.attached? %>
       <figure class="attachment">
-        <%= image_tag @project.project_image.variant(resize: "80x80") %>
+        <%= image_tag @project.project_image, width: 100 %>
       </figure>
       <div class="form-group">
         <div class="form-check-box">
