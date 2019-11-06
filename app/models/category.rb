@@ -8,6 +8,8 @@ class Category < ApplicationRecord
              length: { minimum: 3, maximum: 80 }
   validates :description, length: { maximum: 300}
   has_one_attached :cover_image_cat
+  has_one :category_metum, :class_name => "Metum", :dependent => :destroy
+  accepts_nested_attributes_for :category_metum, :allow_destroy => true
   
 
 attr_accessor :remove_cover_image

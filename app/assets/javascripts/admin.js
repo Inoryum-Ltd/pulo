@@ -50,8 +50,7 @@ $('.lazy').lazy({
           threshold: 0
         });
 
-
-
 });
+
 
 

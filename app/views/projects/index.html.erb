@@ -14,7 +14,7 @@
     	<% @projects.each do |p| %>
       	 <a href="<%= project_path(p) %>" class="project-items gallery_product filter <%= p.project_type_id %>">
       	 <% if p.project_image.attached? %>
-                <%= image_tag '/images/loading.gif', data: { src: "#{url_for(p.project_image)}"}, width: 550, height: 550, class: "img-fluid lazy" %>
+                <%= image_tag '/images/loading.gif', data: { src: "#{url_for(p.project_image.variant(resize_to_limit: [550, 550]))}"}, class: "img-fluid lazy" %>
               <% end %>
             </a>
 <% end %>

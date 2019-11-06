@@ -19,6 +19,23 @@
     <%= f.label :cover_image_cat, "Cover Image" %><br>
     <%= f.file_field :cover_image_cat, direct_upload: true %>
   </div>
+  
+  <legend>Meta</legend>
+    <%= f.fields_for :category_metum do |meta| %>
+      <div class="form-group">
+        <%= meta.label :meta_title %> 
+        <%= meta.text_field :meta_title, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= meta.label :meta_description %> 
+        <%= meta.text_area :meta_description, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= meta.label :meta_keyword %> 
+        <%= meta.text_field :meta_keyword, class: "form-control" %>
+      </div>
+      
+    <% end %>
 
   <p>
     <%= f.submit class: "btn btn-success"%>

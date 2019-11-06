@@ -36,9 +36,10 @@
          <div class="form-group">
             <%= f.label "Site logo" %> 
             <%= f.file_field :site_logo, class: "form-control-file", autofoucs: true %>
-            <% if @setting.site_logo.attached? %>
+        </div>
+        <% if @setting.site_logo.attached? %>
             <figure class="attachment">
-            	<%= image_tag @setting.site_logo, width: "150" %>
+            	<%= image_tag @setting.site_logo.variant(resize_to_limit: [150, 150]) %>
             </figure>
             <div class="form-group">
               <div class="form-check-box">
@@ -47,7 +48,7 @@
               </div>
             </div>
           <% end %>
-        </div>
+          
         <div class="form-group">
             <%= f.label "Items Per Page" %> 
             <%= f.select :item_per_page, ['9', '15', '25'], class: "custom-select custom-select-lg mb-3" %>
@@ -70,21 +71,22 @@
         <div class="form-group">
         <%= f.label "Image" %> 
         <%= f.file_field :hero_image, class: "form-control-file" %>
+        </div>
          <% if @setting.hero_image.attached? %>
             <figure class="attachment">
-            <%= image_tag @setting.hero_image, width: "150" %>
+            <%= image_tag @setting.hero_image.variant(resize_to_limit: [150, 150]) %>
              </figure>
           <% end %>
-        </div>
         <div class="form-group">
         <%= f.label "Hero Background Image" %> 
         <%= f.file_field :hero_bg, class: "form-control-file" %>
+        
+        </div>
          <% if @setting.hero_bg.attached? %>
             <figure class="attachment">
-            <%= image_tag @setting.hero_bg, width: "250"%>
+            <%= image_tag @setting.hero_bg.variant(resize_to_limit: [150, 150])%>
              </figure>
           <% end %>
-        </div>
         <div class="form-group">
         <%= f.label "Hero Button Label" %> 
         <%= f.text_field :hero_button_text, class: "form-control", autofoucs: true %>

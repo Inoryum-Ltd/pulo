@@ -45,6 +45,25 @@
 	<%= f.label "Project Type" %>
     <%= f.collection_select(:project_type_id, ProjectType.all, :id, :name) %>
   </div>
+  
+   <legend>Meta</legend>
+    <%= f.fields_for :project_metum do |meta| %>
+      <div class="form-group">
+        <%= meta.label :meta_title %> 
+        <%= meta.text_field :meta_title, class: "form-control metat-counted" %>
+         <small class="form-text text-muted">Recommended: 70 characters. You’ve used <span class="metat-char-count">0</span></small>
+      </div>
+      <div class="form-group">
+        <%= meta.label :meta_description %> 
+        <%= meta.text_area :meta_description, class: "form-control metad-counted" %>
+        <small class="form-text text-muted">Recommended: 200 characters. You’ve used <span class="metad-char-count">0</span></small>
+      </div>
+      <div class="form-group">
+        <%= meta.label :meta_keyword %> 
+        <%= meta.text_field :meta_keyword, class: "form-control" %>
+      </div>
+      
+    <% end %>
 
   <p>
     <%= f.submit class: "btn btn-success"%>
@@ -54,3 +73,5 @@
 
   
   </div>
+  
+  <%= render 'admin/shared/form_scripts' %>

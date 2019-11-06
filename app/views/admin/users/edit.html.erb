@@ -12,14 +12,15 @@
     <%= f.label "User Name" %> 
     <%= f.text_field :username, class: "form-control", autofoucs: true %>
   </div>
-  
+  <% if current_user.admin? %>
   <div class="form-group">
   	<label>Make <%= @user.username %> admin?</label>
   	<div class="form-check-box">
   		<%= f.check_box :admin %>
-  		<%= f.label 'grant Admin Access', for: "user_admin" %>
+  		<%= f.label :admin %>
   	</div>
    </div>
+   <% end %>
  
   <div class="form-group">
     <%= f.label :email %>

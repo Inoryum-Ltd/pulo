@@ -11,6 +11,11 @@ Page.create(
 	body: '<h2> Home Page </h2> <P> Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
 	Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, </p>'
 	)
+Metum.create(
+  meta_title: 'Flexible Modern Ruby on Rails CMS For Everyone',
+  meta_description: 'PuLo is a Open-source Ruby on Rails CMS for professional publishing, Portfolio, & Personal Sites',
+  page_id: 1
+	)
 
 Block.create(
 	title: 'Header Block',

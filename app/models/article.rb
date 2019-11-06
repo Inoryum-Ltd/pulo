@@ -10,7 +10,8 @@ class Article < ApplicationRecord
   scope :featured, -> { where(featured: 'true') }
   has_rich_text :description
   has_one_attached :featured_image
-  
+  has_one :article_metum, :class_name => "Metum", :dependent => :destroy
+  accepts_nested_attributes_for :article_metum, :allow_destroy => true
   attr_accessor :remove_featured_image
 
   after_save :purge_featured_image, if: :remove_featured_image

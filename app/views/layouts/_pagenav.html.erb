@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <% if setting.site_logo.attached? %>
-      <%= link_to (image_tag setting.site_logo.variant(resize_to_limit: [200, 200])), root_path, class: "navbar-brand" %>
+      <%= link_to (image_tag setting.site_logo.variant(resize_to_limit: [130, 40])), root_path, class: "navbar-brand" %>
     <% else %>
        <%= link_to setting.site_title, root_path, class: "navbar-brand" %>
     <% end %>
