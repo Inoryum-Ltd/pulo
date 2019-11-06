@@ -7,6 +7,7 @@ class Admin::CategoriesController < Admin::BaseController
   
   def new
     @admin_category = Category.new
+    @admin_category.build_category_metum
   end
   
   def create
@@ -24,6 +25,9 @@ class Admin::CategoriesController < Admin::BaseController
   
   def edit
     @admin_category = Category.friendly.find(params[:id])
+    if !@admin_category.category_metum.present?
+      @admin_category.build_category_metum 
+    end
   end
   
   def update
@@ -61,7 +65,7 @@ class Admin::CategoriesController < Admin::BaseController
   
   private
    def category_params
-      params.require(:category).permit(:name, :description, :cover_image_cat)
+      params.require(:category).permit(:name, :description, :cover_image_cat, category_metum_attributes: [:meta_title, :meta_description, :meta_keyword, :metum_id])
     end
     
      def require_admin

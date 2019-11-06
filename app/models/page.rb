@@ -3,6 +3,8 @@ class Page < ApplicationRecord
   friendly_id :title, use: :slugged
   has_many :page_blocks
   has_many :blocks, through: :page_blocks
+  has_one :metum, :dependent => :destroy
+  accepts_nested_attributes_for :metum, :allow_destroy => true
   has_rich_text :body
   has_one_attached :page_cover
   

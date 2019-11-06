@@ -9,6 +9,7 @@ class Admin::PagesController < Admin::BaseController
 	
 	def new
     @page = Page.new
+    @page.build_metum
   end
 	
 	def create
@@ -50,7 +51,7 @@ class Admin::PagesController < Admin::BaseController
 		end
 		
 		def page_params
-			params.require(:page).permit(:title, :body, :page_class, :add_menu, :slug, :page_cover, :remove_page_cover)
+			params.require(:page).permit(:title, :body, :page_class, :add_menu, :slug, :page_cover, :remove_page_cover, metum_attributes: [:meta_title, :meta_description, :meta_keyword])
 		end
 	
 	 def require_admin

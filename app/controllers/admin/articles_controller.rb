@@ -16,6 +16,7 @@ class Admin::ArticlesController < Admin::BaseController
   
   def new
     @article = Article.new
+    @article.build_article_metum
   end
   
   
@@ -61,7 +62,7 @@ class Admin::ArticlesController < Admin::BaseController
     end
   
     def article_params
-      params.require(:article).permit(:title, :description, :featured_image, :remove_featured_image, :slug, :featured, category_ids: [])#:featured_image_cache,) 
+      params.require(:article).permit(:title, :description, :featured_image, :remove_featured_image, :slug, :featured, article_metum_attributes: [:meta_title, :meta_description, :meta_keyword], category_ids: []) 
     end
 
     def find_article

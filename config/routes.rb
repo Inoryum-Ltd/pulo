@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       resources :articles, except: [:show]
       resources :project_types
       resources :projects, except: [:show]
-      resources :pages
+      resources :pages do
+        resources :metums
+      end
       resources :blocks
       resources :users, except: [:show]
       resources :settings, only: [:update, :index]
@@ -20,7 +22,8 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
   get 'home/index'
-  root 'pages#show', defaults: { id: 1 }
+  #root 'pages#show', defaults: { id: 1 }
+  root 'pages#home_page'
   resources :articles, path: 'blog', only: [:index, :show]
   resources :categories, only: [:show]
   get 'contact', to: 'contacts#new'

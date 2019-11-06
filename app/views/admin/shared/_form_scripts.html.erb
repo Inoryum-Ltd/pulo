@@ -1,0 +1,29 @@
+<script>
+	     //counter Main Body   
+$(document).ready(function() {
+      $('.char-count').html($('.counted').val().length);
+    });
+
+    $('.counted').keyup(function() {
+      $('.char-count').html($(this).val().length);
+    });
+
+        // Meta_title
+$(document).ready(function() {
+      $('.metat-char-count').html($('.metat-counted').val().length);
+    });
+
+    $('.metat-counted').keyup(function() {
+      $('.metat-char-count').html($(this).val().length);
+    });
+    
+    
+    // Meta_description
+$(document).ready(function() {
+      $('.metad-char-count').html($('.metad-counted').val().length);
+    });
+
+    $('.metad-counted').keyup(function() {
+      $('.metad-char-count').html($(this).val().length);
+    });
+</script>

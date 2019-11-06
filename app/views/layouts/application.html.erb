@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= display_meta_tags site: "#{setting.site_title}" %>
+     <%= display_meta_tags separator: "-".html_safe, site: "#{setting.site_title}" %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta charset="utf-8">

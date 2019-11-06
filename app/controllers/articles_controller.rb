@@ -7,9 +7,32 @@ class ArticlesController < ApplicationController
   
   def show
     @article = Article.friendly.find(params[:id])
-    @page_title = @article.title
-    @page_description = @article.description.to_s
+    @page_title = custom_meta_title
+    @page_description = custom_meta_description
+    @page_keywords = custom_meta_keywords
   end
   
+  
+  def custom_meta_title
+    if @article.article_metum.present?
+      @article.article_metum.meta_title
+    else
+      @article.title
+    end
+  end
+  
+  def custom_meta_description
+    if @article.article_metum.present?
+      @article.article_metum.meta_description
+    else
+      @article.description.to_s
+    end
+  end
+  
+   def custom_meta_keywords
+    if @article.article_metum.present?
+      @article.article_metum.meta_keyword
+    end
+  end
 
 end

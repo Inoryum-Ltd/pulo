@@ -9,11 +9,15 @@ class Admin::ProjectsController < Admin::BaseController
   end
   
   def edit
+    if !@project.project_metum.present?
+      @project.build_project_metum 
+    end
    
   end
   
   def new
     @project = Project.new
+    @project.build_project_metum
   end
   
   
@@ -55,7 +59,7 @@ class Admin::ProjectsController < Admin::BaseController
     end
   
     def project_params
-      params.require(:project).permit(:title, :description, :project_link, :slug, :project_type_id, :project_image, :remove_project_image) 
+      params.require(:project).permit(:title, :description, :project_link, :slug, :project_type_id, :project_image, :remove_project_image, project_metum_attributes: [:meta_title, :meta_description, :meta_keyword, :metum_id]) 
     end
 
     def find_project

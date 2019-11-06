@@ -26,13 +26,13 @@ class Admin::UsersController < Admin::BaseController
   
   
   def edit
+    @user.skip_confirmation!
    
   end
   
   def update
-    @user.skip_confirmation!
      if @user.update(user_params)
-       
+        
         flash[:success] = "#{@user.username}'s Profile Was Updated"
         redirect_to admin_users_path
       else
@@ -48,7 +48,7 @@ class Admin::UsersController < Admin::BaseController
   
   private
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, :bio, :facebook, :twitter, :slug, :authorc, :remove_cover_image)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :admin, :bio, :facebook, :twitter, :slug, :authorc, :remove_cover_image)
     end
   def set_user
        @user = User.friendly.find(params[:id])

@@ -1,0 +1,25 @@
+<% if setting.display_hero? %>
+
+<section class="main-hero">
+  <div class="single-header-container container">
+    <div class="row">
+    <div class="hero-text col-md-7">
+      <h1><%= setting.hero_title %></h1>
+      <div class="hero-content">
+      	<p class="lead text-white"><%= setting.hero_content %></p>
+      	<a href="<%= setting.hero_button_link %>" class="btn btn-primary"><%= setting.hero_button_text %></a>
+      </div>
+      
+    </div>
+    
+    <div class="hero-image col-md-5">
+      <%= image_tag setting.hero_image.variant(resize_to_limit: [390, 390]) if setting.hero_image.attached? %>
+      
+    </div>
+    </div>
+  
+  </div>
+</section>
+
+<% end %>
+<%= render 'show_page' %>

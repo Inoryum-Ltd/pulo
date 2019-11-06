@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_30_070027) do
+ActiveRecord::Schema.define(version: 2019_11_06_070947) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -88,6 +88,18 @@ ActiveRecord::Schema.define(version: 2019_10_30_070027) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "meta", force: :cascade do |t|
+    t.string "meta_title"
+    t.text "meta_description"
+    t.string "meta_keyword"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "page_id"
+    t.integer "article_id"
+    t.integer "category_id"
+    t.integer "project_id"
   end
 
   create_table "page_blocks", force: :cascade do |t|
