@@ -1,7 +1,7 @@
 
-@import "bootstrap";
+@import "bootstrap/scss/bootstrap";
 @import "font-awesome";
-@import "summernote-bs4";
+@import "summernote/dist/summernote-bs4";
 .jumbotron.text-center.custom {
     min-height: 65vh;
     display: flex;
