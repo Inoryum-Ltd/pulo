@@ -14,11 +14,12 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require summernote/summernote-bs4.min
+//= require summernote-init
 //= require activestorage
 //= require jquery.lazy.min.js
 //= jquery.lazy.plugins.min.js
 //= require turbolinks
-//= require codemirror
 //= require_tree .
 //= require_self
 

@@ -1,0 +1,34 @@
+.note-editor.note-frame {
+    border: 1px solid #ced4da;
+    overflow: hidden;
+}
+.note-popover .popover-content, .card-header.note-toolbar {
+    padding: 0 0 5px 5px;
+    margin: 0;
+    background: transparent;
+    border-bottom: 1px solid #ced4da;
+}
+
+.note-popover .popover-content > .btn-group, .card-header.note-toolbar > .btn-group {
+    margin-top: 5px;
+    margin-right: 20px;
+    margin-left: 0;
+}
+.note-btn-group  .btn-light {
+    color: #212529;
+    background-color: transparent;
+    border-color: #ced4da;
+}
+
+.note-editor.note-frame .note-statusbar .note-resizebar .note-icon-bar {
+    border-top: 1px solid #ced4da;
+    height: 3px auto;
+}
+.note-editor.note-frame .note-statusbar {
+    background-color: transparent;
+    border-top: 0;
+}
+.note-editor.note-frame .note-statusbar .note-resizebar {
+    width: auto;
+    height: 18px;
+}

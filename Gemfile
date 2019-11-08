@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
-gem 'rails', '~> 6.0.0'
+gem 'rails', '~> 6.0.1'
 gem 'puma'
 gem 'bootstrap', '~> 4.3.1'
 gem 'will_paginate', '~> 3.1.0'
@@ -55,4 +55,4 @@ gem 'webpacker', '~> 4.x'
 gem 'devise'
 gem "aws-sdk-s3", require: false
 gem 'meta-tags'
-gem 'codemirror-rails'
+gem 'summernote-rails', '~> 0.8.12.0'
