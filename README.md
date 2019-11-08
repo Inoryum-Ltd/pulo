@@ -14,7 +14,7 @@ Signup & explore the backend of PuLo
 ### Requirments
 
 *  Ruby 2.6.3
-*  Rails 6.0.0
+*  Rails 6.0.1
 *  ImageMagick for image processing
 
 ### Installation
