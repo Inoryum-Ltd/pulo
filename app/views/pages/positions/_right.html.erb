@@ -1,5 +1,5 @@
 <% @page_blocks_right.each do |pb| %>
-  <div class="block <%= pb.block_class if pb.block_class %>">
+  <div class="block block-right <%= pb.block_class if pb.block_class %>">
   	<% if pb.show_title? %>
   <h3 class="block-title"><%= pb.title %></h3>
   	<% end %>

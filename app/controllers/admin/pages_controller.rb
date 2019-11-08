@@ -24,6 +24,9 @@ class Admin::PagesController < Admin::BaseController
 	end
 	
 	def edit
+		if !@page.metum.present?
+      @page.build_metum 
+    end
 		
 	end
 	
