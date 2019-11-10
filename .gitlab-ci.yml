@@ -3,12 +3,6 @@
 # https://hub.docker.com/r/library/ruby/tags/
 image: "ruby:2.6.3"
 
-
-# Cache gems in between builds
-cache:
-  paths:
-    - vendor/ruby
-
 before_script:
  - apt-get update && apt-get install -y sshpass
 
@@ -18,7 +12,6 @@ deploy_stage:
   only:
     - master
   script:
-    - sshpass -V
     - export SSHPASS=$USER_PASS 
     - export USERNAME=$USER_NAME
     - export HOST=$HOST_STAGING
