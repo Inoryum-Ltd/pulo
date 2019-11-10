@@ -13,4 +13,4 @@ deploy_stage:
     - master
   script:
     - export SSHPASS=$USER_PASS 
-    - sshpass -e scp -o stricthostkeychecking=no -r . $USER_NAME@$HOST_STAGING:$PATH_STAGING
+    - sshpass -e scp -o stricthostkeychecking=no -r * $USER_NAME@$HOST_STAGING:$PATH_STAGING
