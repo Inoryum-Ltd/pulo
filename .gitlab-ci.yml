@@ -10,7 +10,7 @@ cache:
     - vendor/ruby
 
 before_script:
- - apt-get update -qq && apt-get install -y -qq sshpass
+ - apt-get update && apt-get install -y sshpass
 
 deploy_stage:
   stage: deploy
