@@ -43,14 +43,8 @@ $(this).removeClass("active");
 $(this).addClass("active");
 
 });
+
 // Lazy Loading
-// $('.lazy').lazy({
-//           effect: "fadeIn",
-//           effectTime: 1000,
-//           threshold: 0
-//         });
-
-
 
 
  });
@@ -104,3 +98,6 @@ addEventListener("direct-upload:end", event => {
       });
     });
   });
+
+
+

@@ -12,7 +12,7 @@
 /* Main Hero */
 
 .main-hero {
-    background: linear-gradient(90deg, #021048, #1e38a3);
+    background: #474b55;
 }
 .single-header-container {
     padding-top: 6em;
@@ -440,12 +440,12 @@ section.cat-section {
     transition: all ease 300ms;
 }
 .darkHeader {
-    background: linear-gradient(90deg, #021048c7, #1e38a3);
+    background-color: rgba(71, 75, 85, 0.9607843137254902) !important;
     padding: 10px;
 }
 
 .articles.index .bg-dark {
-    background-image: linear-gradient(90deg, #021048, #1e38a3);
+    background-color: rgba(71, 75, 85, 0.9607843137254902) !important;
 }
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.7);

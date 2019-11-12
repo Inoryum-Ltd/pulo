@@ -7,7 +7,6 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("jquery")
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
@@ -25,4 +24,11 @@ require("@rails/actiontext")
 import 'bootstrap'
 import 'summernote/dist/summernote-bs4'
 import './admin.js'
+import LazyLoad from "vanilla-lazyload";
 
+document.addEventListener("turbolinks:load", () => {
+const lazyLoadOptions = {
+	elements_selector: ".lazy"
+	};
+const pageLazyLoad = new LazyLoad(lazyLoadOptions);
+})
