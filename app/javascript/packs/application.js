@@ -28,7 +28,8 @@ import LazyLoad from "vanilla-lazyload";
 
 document.addEventListener("turbolinks:load", () => {
 const lazyLoadOptions = {
-	elements_selector: ".lazy"
+	elements_selector: ".lazy",
+	use_native: true
 	};
 const pageLazyLoad = new LazyLoad(lazyLoadOptions);
 })

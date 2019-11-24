@@ -27,8 +27,8 @@
     }
 }
 #sidebar {
-    background: linear-gradient(90deg, #303030, #232528);
-    color: #adb1b7;
+    background: #e7ecf3;
+    color: #132740;
     transition: all 0.3s;
 }
 #sidebar span {
@@ -39,7 +39,7 @@
     text-align: center;
 }
 .sidebar-header a {
-    color: #fff;
+    color: #132740;
 }
 
 #sidebar ul.components {
@@ -54,15 +54,14 @@
 #sidebar ul li a {
     padding: 1.2em 1.2em 1.2em 2.2em;
     display: block;
-    color: #adb1b7;
+    color: #132740;
     text-transform: uppercase;
     font-size: .8rem;
-    border-bottom: 1px solid #34373b;
     text-decoration: none;
     transition: background 0.3s linear;
 }
 #sidebar ul li a:hover {
-    background:#34373b;
+    background:#f3f5fb;
 }
 
 #sidebar ul li.active > a {
@@ -74,7 +73,6 @@
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    background-color: #f3f5fb;
 }
 
 .content-inner {
@@ -97,21 +95,22 @@
 
 .items-listing {
     margin: 0;
+    background: #f3f5fb;
     padding: 0;
     list-style: none;
-    border: 1px solid #d4dde3;
+    border: 1px solid #edf2f9;
     border-radius: 7px;
     overflow: hidden;
+    box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
 }
 
 .item-listing-inner {
-    background: #fff;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 1em;
     color: #15171a;
-    border-bottom: 1px solid #d4dde3;
+    border-bottom: 1px solid #edf2f9;
     transition: all ease 300ms;
 }
 .item-listing-inner.table-title {
@@ -178,15 +177,18 @@
 }
 
 .dash-top a {
-    flex: 1;
-    color: #000;
+    flex: 1 1 180px;
+    color: #132740 !important;
     text-align: center;
-    background: #fff;
+    background: #f3f5fb;
     margin: 1em;
     padding: 1em;
-    text-decoration: none !important;
+    text-decoration: none!important;
     font-style: italic;
     transition: ease all 300ms;
+    border: 1px solid #edf2f9;
+    box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.03);
+    border-radius: .5rem;
 }
 
 .dash-top a span {
@@ -198,7 +200,7 @@
 
 
 .dash-top a:hover {
-    box-shadow: 0 0 19px -8px #222;
+    color: #002245 !important;
 }
 
 
