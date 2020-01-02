@@ -15,9 +15,22 @@
   
  </div>
  <div class="col">
-  <h2>Resent Users</h2>
-  <% @users.limit(5).each do |u| %>
-   <%= u.username %>
+  <div class="dash-items">
+  <ul class="items-listing">
+  <li class="item-listing-inner table-title">
+      <div class="listing-items date"><b>Date</b></div>
+      <div class="listing-items title"><b>User Name</b></div>
+      <div class="listing-items page-assignment"><b>Email</b></div>
+    </li>
+  <% @users.limit(5).each do |user| %>
+    <li class="item-listing-inner">
+      <div class="listing-items date"><%= user.created_at.strftime("%b %d, %Y") %></div>
+      <div class="listing-items title"><b><%= user.username %></b></div>
+      <div class="listing-items page-assignment"> <%= user.email %> </div>
+    </li>
   <% end %>
+  
+</ul>
+</div>
  </div>
 </div>

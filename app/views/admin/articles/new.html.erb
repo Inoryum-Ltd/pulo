@@ -35,7 +35,9 @@
     
     <div class="form-group">
       <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>    
+      <div class="form-check-box">
         <%= b.check_box %> <%= b.label %>
+      </div>
       <% end %>
     </div>
     

@@ -46,9 +46,7 @@ $(this).addClass("active");
 
 // Lazy Loading
 
-
- });
-
+});
 // direct_uploads.js
  
 addEventListener("direct-upload:initialize", event => {
@@ -98,6 +96,3 @@ addEventListener("direct-upload:end", event => {
       });
     });
   });
-
-
-

@@ -95,7 +95,6 @@
 
 .items-listing {
     margin: 0;
-    background: #f3f5fb;
     padding: 0;
     list-style: none;
     border: 1px solid #edf2f9;
@@ -278,12 +277,17 @@ button.btn.btn-default.filter-button {
     background: #fff;
     margin: 0 0 2em;
     padding: 2em;
-    border-right: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #e5eff5;
+    border-left: 1px solid #e5eff5;
+    border-bottom: 1px solid #e5eff5;
+}
+.settings .nav-tabs {
+    border-bottom: 1px solid #e5eff5;
 }
 
-
+.settings .nav-tabs .nav-link.active, .settings .nav-tabs .nav-item.show .nav-link {
+    border-color: #e5eff5 #e5eff5 #fff;
+}
 
 /* direct_uploads.css */
  
@@ -323,4 +327,23 @@ button.btn.btn-default.filter-button {
  
 input[type=file][data-direct-upload-url][disabled] {
   display: none;
+}
+
+
+.nav-admin {
+    border-bottom: 1px solid #edf2f9;
+}
+
+.form-control {
+        border: 1px solid #edf2f9 !important;
+    }
+    
+    trix-toolbar .trix-button-group {
+    border: 1px solid #edf2f9 !important;
+    border-top-color: #edf2f9 !important;
+    border-bottom-color: #edf2f9 !important;
+   }
+   trix-toolbar .trix-button {
+    border-bottom: 1px solid #edf2f9 !important;
+    
 }
