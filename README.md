@@ -3,7 +3,7 @@
 
 PuLo is a simple yet powerful open-source Content Management System powered by Ruby on Rails.
 
-![PuLo Screenshot](https://res.cloudinary.com/dgm5fyoub/image/upload/v1572133040/sbkexz5xi1asrigawmdl.png)
+![PuLo Screenshot](https://res.cloudinary.com/dgm5fyoub/image/upload/v1579279267/qm4ke5ttuudnectxwane.png)
 
 ### Demo
 
@@ -13,8 +13,8 @@ Signup & explore the backend of PuLo
 
 ### Requirments
 
-*  Ruby 2.6.3
-*  Rails 6.0.1
+*  Ruby 2.6.3+
+*  Rails 6.0.1+
 *  ImageMagick for image processing
 
 ### Installation
