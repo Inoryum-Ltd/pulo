@@ -7,7 +7,7 @@ PuLo is a simple yet powerful open-source Content Management System powered by R
 
 ### Demo
 
-url: https://pulo-demo.thesaleheen.com
+url: https://pulo-demo.inoryum.com
 
 Signup & explore the backend of PuLo
 
