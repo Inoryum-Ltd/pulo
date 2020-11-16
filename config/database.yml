@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  host: localhost
+
+development:
+  <<: *default
+  database: pulo_development
+  user: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
+test:
+  <<: *default
+  database: pulo_test
+  user:  <%= ENV['DATABASE_USER'] %>
+  password:  <%= ENV['DATABASE_PASSWORD'] %>
+
+production:
+  <<: *default
+  database: pulo_production
+  user: pulo
+  password: <%= ENV['TALENTSTORY_DATABASE_PASSWORD'] %>
