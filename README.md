@@ -13,8 +13,8 @@ Signup & explore the backend of PuLo
 
 ### Requirments
 
-*  Ruby 2.6.3+
-*  Rails 6.0.1+
+*  Ruby 2.7.3 & 3.0.0+
+*  Rails 6.1.3+
 *  ImageMagick for image processing
 
 ### Installation
@@ -23,7 +23,6 @@ Signup & explore the backend of PuLo
 1. **Clone the repository** 
 2. ```cd pulo```
 3. Run Bundle ```bundle install```
-4. Run ```mv config/sample_sqlite3_database.yml config/database.yml```
 5. Run ```rails db:create db:migrate db:seed```
 6. Start the server ```rails server```
 
