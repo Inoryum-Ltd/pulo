@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 gem 'rails', '~> 6.1.3'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-will_paginate'
 gem 'sass-rails', '>= 6'
